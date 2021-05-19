@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 class UpdateEmployeeInfo extends Component {
@@ -18,7 +19,7 @@ class UpdateEmployeeInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:8082/api/employees/'+this.props.match.params.id)
+      .get('http://localhost:9555/api/employees/'+this.props.match.params.id)
       .then(res => {
         // this.setState({...this.state, book: res.data})
         this.setState({
@@ -41,7 +42,7 @@ class UpdateEmployeeInfo extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
+   
     const data = {
       full_name: this.state.full_name,
       age: this.state.age,
@@ -52,9 +53,9 @@ class UpdateEmployeeInfo extends Component {
     };
 
     axios
-      .put('http://localhost:5080/api/employees/'+this.props.match.params.id, data)
+      .put('http://localhost:9555/api/employees/'+this.props.match.params.id, data)
       .then(res => {
-        this.props.history.push('/show-employee/'+this.props.match.params.id);
+        this.props.history.push('/');
       })
       .catch(err => {
         console.log("Error in UpdateEmployeeInfo!");
@@ -68,18 +69,18 @@ class UpdateEmployeeInfo extends Component {
         <div className="container">
           <div className="row">
   
-            <div className="col-md-5 m-auto">
-              <h1 className="display-4 text-center">Edit Employee Data</h1>
-              <p className="lead text-center">
-                  Update Empoyee Info
-              </p>
+            <div className="col-md-12 m-auto">
+            <Link to="/"  className="btn btn-outline-primary float-left mt-4">
+            Go Back to List
+              </Link>
+              <h1 className="display-4 text-center">Update Employee Data</h1>
             </div>
           </div>
-
+          <hr/><hr/>
           <div className="col-md-5 m-auto">
           <form noValidate onSubmit={this.onSubmit}>
             <div className='form-group'>
-              <label htmlFor="title">Full Name</label>
+              <label htmlFor="title" style={{fontWeight:"bolder"}}>Full Name:</label>
               <input
                 type='text'
                 name='full_name'
@@ -92,7 +93,7 @@ class UpdateEmployeeInfo extends Component {
             <br />
 
             <div className='form-group'>
-            <label htmlFor="isbn">Age</label>
+            <label htmlFor="isbn" style={{fontWeight:"bolder"}}>Age:</label>
               <input
                 min='18'
                 max='59'
@@ -105,7 +106,7 @@ class UpdateEmployeeInfo extends Component {
             </div>
 
             <div className='form-group'>
-            <label htmlFor="author">Gender</label>
+            <label htmlFor="author" style={{fontWeight:"bolder"}}>Gender:</label>
               <input
                 type='text'
 
@@ -117,7 +118,7 @@ class UpdateEmployeeInfo extends Component {
             </div>
 
             <div className='form-group'>
-            <label htmlFor="description">Address</label>
+            <label htmlFor="description" style={{fontWeight:"bolder"}}>Address:</label>
               <input
                 type='text'
                 name='address'
@@ -128,7 +129,7 @@ class UpdateEmployeeInfo extends Component {
             </div>
 
             <div className='form-group'>
-            <label htmlFor="published_date">DoB</label>
+            <label htmlFor="published_date" style={{fontWeight:"bolder"}}>Date of Birth:</label>
               <input
                 type='date'
                 name='birthdate'
@@ -138,9 +139,9 @@ class UpdateEmployeeInfo extends Component {
               />
             </div>
             <div className='form-group'>
-            <label htmlFor="publisher">Phone Number</label>
+            <label htmlFor="publisher" style={{fontWeight:"bolder"}}>Phone Number:</label>
               <input
-                type='text'
+                type='number'
                 name='phone_number'
                 className='form-control'
                 value={this.state.phone_number}
@@ -148,7 +149,7 @@ class UpdateEmployeeInfo extends Component {
               />
             </div>
 
-            <button type="submit" className="btn btn-outline-info btn-lg btn-block">Update Book</button>
+            <button type="submit" className="btn btn-outline-info btn-lg btn-block">Update Employee</button>
             <br></br>
             </form>
           </div>

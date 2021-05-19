@@ -23,7 +23,6 @@ class CreateEmployee extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
     const data = {
       full_name: this.state.full_name,
       age: this.state.age,
@@ -34,7 +33,7 @@ class CreateEmployee extends Component {
     };
 
     axios
-      .post('http://localhost:5080/api/employees', data)
+      .post('http://localhost:9555/api/employees', data)
       .then(res => {
         this.setState({
           full_name: '',
@@ -91,6 +90,7 @@ class CreateEmployee extends Component {
                     className='form-control'
                     value={this.state.age}
                     onChange={this.onChange}
+                    
                   />
                 </div>
 
@@ -102,6 +102,7 @@ class CreateEmployee extends Component {
                     className='form-control'
                     value={this.state.gender}
                     onChange={this.onChange}
+                    
                   />
                 </div>
 
@@ -113,6 +114,7 @@ class CreateEmployee extends Component {
                     className='form-control'
                     value={this.state.address}
                     onChange={this.onChange}
+                    
                   />
                 </div>
 
@@ -124,6 +126,7 @@ class CreateEmployee extends Component {
                     className='form-control'
                     value={this.state.birthdate}
                     onChange={this.onChange}
+                    
                   />
                 </div>
                 <div className='form-group'>
@@ -134,6 +137,7 @@ class CreateEmployee extends Component {
                     className='form-control'
                     value={this.state.phone_number}
                     onChange={this.onChange}
+                    
                   />
                 </div>
 

@@ -15,7 +15,7 @@ class ShowEmployeeInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:5080/api/employees/' + this.props.match.params.id)
+      .get('http://localhost:9555/api/employees/' + this.props.match.params.id)
       .then(res => {
         // console.log("Print-showBookDetails-API-response: " + res.data);
         this.setState({
@@ -29,7 +29,7 @@ class ShowEmployeeInfo extends Component {
 
   onDeleteClick(id) {
     axios
-      .delete('http://localhost:5080/api/employees/' + id)
+      .delete('http://localhost:9555/api/employees/' + id)
       .then(res => {
         this.props.history.push("/");
       })
@@ -44,72 +44,39 @@ class ShowEmployeeInfo extends Component {
     const employee = this.state.employee;
     let EmpData = <div>
 
-
-
-      <div className="col-md-5 mx-auto">
+      <div className="col-md-12 mx-auto">
         <form noValidate onSubmit={this.onSubmit}>
-          <div className='form-group'>
-            <label htmlFor="title">Full Name</label>
-            <input
-              type='text'
-              name='title'
-              className='form-control'
-              value={employee.full_name}
-
-            />
-          </div>
-          <br />
-
-          <div className='form-group'>
-            <label htmlFor="isbn">Age</label>
-            <input
-              type='text'
-              name='isbn'
-              className='form-control'
-              value={employee.age}
-
-            />
+        <div className='form-group'>
+            <label style={{fontWeight:"bolder"}}>Full Name</label>
+            <label className='form-control'>{employee.full_name}</label>
           </div>
 
           <div className='form-group'>
-            <label htmlFor="author">Gender</label>
-            <input
-              type='text'
-
-              name='author'
-              className='form-control'
-              value={employee.gender}
-
-            />
+            <label style={{fontWeight:"bolder"}}>Age</label>
+            <label className='form-control'>{employee.age}</label>
           </div>
 
           <div className='form-group'>
-            <label htmlFor="description">Address</label>
-            <input
-              type='text'
-              name='description'
-              className='form-control'
-              value={employee.address}
-            />
+            <label style={{fontWeight:"bolder"}}>Gender</label>
+            <label className='form-control'>{employee.gender}</label>
           </div>
 
           <div className='form-group'>
-            <label htmlFor="published_date">DoB</label>
-            <input
-              type='text'
-              name='published_date'
+            <label style={{fontWeight:"bolder"}}>Address</label>
+            <label className='form-control'>{employee.address}</label>
+          </div>
+
+          <div className='form-group'>
+            <label style={{fontWeight:"bolder"}}>Date of Birth: </label>
+            <label
               className='form-control'
-              value={employee.birthdate}
-            />
+             > {employee.birthdate}</label>
           </div>
           <div className='form-group'>
-            <label htmlFor="publisher">Phone Number</label>
-            <input
-              type='text'
-              name='publisher'
+            <label style={{fontWeight:"bolder"}}>Phone Number</label>
+            <label
               className='form-control'
-              value={employee.phone_number}
-            />
+            >{employee.phone_number}</label>
           </div>
         </form>
       </div>
@@ -121,34 +88,53 @@ class ShowEmployeeInfo extends Component {
     return (
       <div className="ShowBookDetails">
         <div className="container">
-        <br /> <br />
-        <Link to="/" className="btn btn-outline-primary float-right">
-                Show Lists
+          <br /> <br />
+          <Link to="/" className="btn btn-outline-primary float-left">
+            Go Back
               </Link>
-              <br /> <br />
+          <br /> <br />
           <div className="row">
-            <div className="col-md-5 m-auto ">
+            <div className="col-md-12 m-auto ">
               <h1 className="display-4 text-center">Employee Details</h1>
-              <p className="lead text-center">
-                View Employee Information
-              </p>
-              <hr /> <br />
+              <hr /> <hr /><br />
             </div>
           </div>
-          <div>
+          <div className="container">
+
+            <div class="row">
+              <div class="col ml-5">
+                <img src="https://play-lh.googleusercontent.com/oAzSon7ccvrVa8OH0A7xwMBJ6J2SfG_wy13DUUrRKQEMxTbQhXMsmwiiVeq7y3dzsos" style={{ height: "10px;" }} />
+              </div>
+              <div class="col-6 mr-5">
+                {EmpData}
+                <div className="container ">
+                  <div className="row  justify-content-md-center">
+                    <div class="col-md-4"> <button type="button" className="btn btn-outline-danger btn-block" onClick={this.onDeleteClick.bind(this, employee._id)}>Delete</button><br />
+                    </div>
+
+                    <div className="col-md-4 ">
+                      <Link to={`/edit-employee/${employee._id}`} className="btn btn-outline-info btn-block">
+                        Edit
+                    </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <div>
             {EmpData}
             <div className="container ">
-            <div class="row  justify-content-md-center">
-              <div class="col-md-2"> <button type="button" className="btn btn-outline-danger btn-block" onClick={this.onDeleteClick.bind(this, employee._id)}>Delete</button><br />
-              </div>
+              <div className="row  justify-content-md-center">
+                <div class="col-md-2"> <button type="button" className="btn btn-outline-danger btn-block" onClick={this.onDeleteClick.bind(this, employee._id)}>Delete</button><br />
+                </div>
 
-              <div class="col-md-2 ">
-                <Link to={`/edit-employee/${employee._id}`} className="btn btn-outline-info btn-block">
-                  Edit
+                <div className="col-md-2 ">
+                  <Link to={`/edit-employee/${employee._id}`} className="btn btn-outline-info btn-block">
+                    Edit
                     </Link>
+                </div>
               </div>
-            </div>
-            </div>
+            </div> */}
           </div>
 
 
