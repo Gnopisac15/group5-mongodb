@@ -54,21 +54,23 @@ class CreateEmployee extends Component {
     return (
       <div className="CreateBook">
         <div className="container">
-          <div className="row">
+          <div className="row" >
             <div className="col-md-12 mx-auto">
               <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
+            </div>
+            <div className="card  col-md-4 m-auto" style={{boxShadow: "0 6px 10px 0 #d4044d, 0 6px 20px 0 rgba(3, 0, 0, 0.19)"}}>
+            <Link to="/" className="btn btn-outline-danger "   ><i class="fa fa-eye" ></i>
                 Show Employee Data List
               </Link>
-            </div>
-            <div className="col-md-4 m-auto">
-              <h1 className="display-4 text-center">Add Employee</h1>
-              <p className="lead text-center">
-                Create new employee
-              </p>
-
+              <img src="employee1.png" height="130px"></img>
+              <h3 className=" text-center">Add Employee</h3>
+              <div className="card-body">
               <form noValidate onSubmit={this.onSubmit}>
                 <div className='form-group'>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-user" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
                   <input
                     type='text'
                     placeholder='Full Name'
@@ -78,9 +80,13 @@ class CreateEmployee extends Component {
                     onChange={this.onChange}
                   />
                 </div>
-                <br />
+                </div>
 
                 <div className='form-group'>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <div class="input-group-text"><i style={{fontSize: "20px",color:"#d90b4f"}}>@</i></div>
+                </div>
                   <input
                     min='18'
                     max='60'
@@ -92,9 +98,14 @@ class CreateEmployee extends Component {
                     onChange={this.onChange}
                     
                   />
+                  </div>
                 </div>
 
                 <div className='form-group'>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-intersex" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
                   <input
                     type='text'
                     placeholder='Gender'
@@ -105,8 +116,13 @@ class CreateEmployee extends Component {
                     
                   />
                 </div>
+                </div>
 
                 <div className='form-group'>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-map-marker" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
                   <input
                     type='text'
                     placeholder='Address'
@@ -117,8 +133,13 @@ class CreateEmployee extends Component {
                     
                   />
                 </div>
+                </div>
 
                 <div className='form-group'>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-calendar" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
                   <input
                     type='date'
                     placeholder='DoB'
@@ -129,7 +150,12 @@ class CreateEmployee extends Component {
                     
                   />
                 </div>
+                </div>
                 <div className='form-group'>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-phone" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
                   <input
                     type='text'
                     placeholder='Phone Number'
@@ -140,12 +166,14 @@ class CreateEmployee extends Component {
                     
                   />
                 </div>
+                </div>
 
                 <input
                   type="submit"
                   className="btn btn-outline-warning btn-block mt-4"
                 />
               </form>
+            </div>
             </div>
           </div>
         </div>

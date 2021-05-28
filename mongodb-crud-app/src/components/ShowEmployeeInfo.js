@@ -44,7 +44,7 @@ class ShowEmployeeInfo extends Component {
     const employee = this.state.employee;
     let EmpData = <div>
 
-      <div className="col-md-12 mx-auto">
+      <div className="card col-md-12 mx-auto">
         <form noValidate onSubmit={this.onSubmit}>
         <div className='form-group'>
             <label style={{fontWeight:"bolder"}}>Full Name</label>
@@ -79,14 +79,15 @@ class ShowEmployeeInfo extends Component {
             >{employee.phone_number}</label>
           </div>
         </form>
-      </div>
-
+    
+        </div>
     </div>
 
 
 
     return (
       <div className="ShowBookDetails">
+            <br />
         <div className="container">
           <br /> <br />
           <Link to="/" className="btn btn-outline-primary float-left">
@@ -95,12 +96,12 @@ class ShowEmployeeInfo extends Component {
           <br /> <br />
           <div className="row">
             <div className="col-md-12 m-auto ">
-              <h1 className="display-4 text-center">Employee Details</h1>
-              <hr /> <hr /><br />
+             
+              <hr />  <h3 className="text-center">Employee Details</h3><hr /><br />
             </div>
           </div>
           <div className="container">
-
+      
             <div class="row">
               <div class="col ml-5">
                 <img src="https://play-lh.googleusercontent.com/oAzSon7ccvrVa8OH0A7xwMBJ6J2SfG_wy13DUUrRKQEMxTbQhXMsmwiiVeq7y3dzsos" style={{ height: "10px;" }} />
@@ -109,11 +110,11 @@ class ShowEmployeeInfo extends Component {
                 {EmpData}
                 <div className="container ">
                   <div className="row  justify-content-md-center">
-                    <div class="col-md-4"> <button type="button" className="btn btn-outline-danger btn-block" onClick={this.onDeleteClick.bind(this, employee._id)}>Delete</button><br />
+                    <div class="col-md-4"> <button type="button" className="btn btn-danger btn-block" onClick={this.onDeleteClick.bind(this, employee._id)}>Delete</button><br />
                     </div>
 
                     <div className="col-md-4 ">
-                      <Link to={`/edit-employee/${employee._id}`} className="btn btn-outline-info btn-block">
+                      <Link to={`/edit-employee/${employee._id}`} className="btn btn-info btn-block">
                         Edit
                     </Link>
                     </div>

@@ -60,29 +60,31 @@ class ShowEmployeeDataList extends Component {
 
 
     return (
-      <div style={{padding:"10px"}}>
-        <Link to="/create-employee" className="btn btn-outline-warning float-right">
-          + Add New Employee
+     
+      <div clasName="container" style={{padding:"10px"}} >
+         <br /> 
+        <Link to="/create-employee" className="btn btn-outline-warning float-right" style={{marginRight:"50px"}} >
+        <i class='fas fa-user-plus' style={{fontSize: "20px",color:"#d90b4f"}}></i> Add New Employee
                </Link>
-        <br />
-        <br />
-        <div className="row ml-1 mr-1">
+       
+        <br /> <br />
+        <div className="row ml-5 mr-5">
           {employees.map((user, index) => (
-            <div className="col-lg-3 card mt-2">
+            <div className="col-lg-3 card mt-2" style={{boxShadow: "0 6px 10px 0 #e63c77, 0 6px 20px 0 rgba(3, 0, 0, 0.19)"}}>
 
-              <div key={index}>
+              <div key={index} >
                 <div className="card rounded shadow-sm border-0">
                   <div className="card-body p-0">
 
-                    <div className="bg-primary px-3 py-5 text-center card-img-top mt-2">
+                    <div className="px-3 py-5 text-center card-img-top mt-2" style={{background:"#e61c62"}}>
                       <img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..." width="100" className="rounded-circle mb-2 img-thumbnail d-block mx-auto" />
                       <h5 className="text-white mb-0">{user.full_name}</h5>
                     </div>
                     <div className="p-4 d-flex justify-content-center">
                       <ul className="list-inline mb-0">
-                        <i className="fa fa-trash-o text-primary" style={{ fontSize: "24px" }} onClick={this.onDeleteClick.bind(this, user._id)}></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i className="fa fa-trash-o " style={{ fontSize: "24px",color:"red" }} onClick={this.onDeleteClick.bind(this, user._id)}></i>&nbsp;&nbsp;&nbsp;&nbsp;
                        <Link to={`/edit-employee/${user._id}`}>
-                          <i className="fa fa-edit text-primary" style={{ fontSize: "24px" }}></i>
+                          <i className='fas fa-user-edit' style={{ fontSize: "24px",color:"#e6991c" }}></i>
                         </Link>&nbsp;&nbsp;&nbsp;&nbsp;
                       <Link to={`/show-employee/${user._id}`}>
                           <i className="fa fa-eye text-primary" style={{ fontSize: "24px" }}></i>
@@ -99,6 +101,7 @@ class ShowEmployeeDataList extends Component {
           ))}
         </div>
       </div>
+
 
 
 

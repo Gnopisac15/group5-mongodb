@@ -68,19 +68,29 @@ class UpdateEmployeeInfo extends Component {
       <div className="UpdateBookInfo">
         <div className="container">
           <div className="row">
-  
-            <div className="col-md-12 m-auto">
-            <Link to="/"  className="btn btn-outline-primary float-left mt-4">
-            Go Back to List
+            <br />
+            <div className="col-md-12 m-auto" style={{marginTop:"10px", width:"30%"}}>
+            <Link to="/create-employee"  className="btn btn-outline-warning float-left mt-4" >
+            <i class='fas fa-user-plus' style={{fontSize: "20px",color:"#d90b4f"}}></i> Add New Employee
               </Link>
-              <h1 className="display-4 text-center">Update Employee Data</h1>
+            <Link to="/"  className="btn btn-outline-primary float-right mt-4" >
+            <i class='fas fa-arrow-alt-circle-right' style={{fontSize: "20px",color:"#3c80e6"}}></i> Go Back to List
+              </Link>
+           
             </div>
           </div>
-          <hr/><hr/>
-          <div className="col-md-5 m-auto">
+          <hr/>   <h3 className="text-center">Update Employee Data</h3><hr/>
+          <div></div>
+
+
+          <div className=" card col-md-5 m-auto" style={{boxShadow: "0 6px 10px 0 #d4044d, 0 6px 20px 0 rgba(3, 0, 0, 0.19)"}}>
           <form noValidate onSubmit={this.onSubmit}>
-            <div className='form-group'>
+            <div className='form-group'><br />
               <label htmlFor="title" style={{fontWeight:"bolder"}}>Full Name:</label>
+              <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-user" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
               <input
                 type='text'
                 name='full_name'
@@ -90,10 +100,14 @@ class UpdateEmployeeInfo extends Component {
                 
               />
             </div>
-            <br />
+            </div>
 
             <div className='form-group'>
             <label htmlFor="isbn" style={{fontWeight:"bolder"}}>Age:</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i style={{fontSize: "20px",color:"#d90b4f"}}>@</i></div>
+                </div>
               <input
                 min='18'
                 max='59'
@@ -104,9 +118,14 @@ class UpdateEmployeeInfo extends Component {
                 onChange={this.onChange}
               />
             </div>
+            </div>
 
             <div className='form-group'>
             <label htmlFor="author" style={{fontWeight:"bolder"}}>Gender:</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-intersex" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
               <input
                 type='text'
 
@@ -116,9 +135,14 @@ class UpdateEmployeeInfo extends Component {
                 onChange={this.onChange}
               />
             </div>
+            </div>
 
             <div className='form-group'>
             <label htmlFor="description" style={{fontWeight:"bolder"}}>Address:</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-map-marker" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
               <input
                 type='text'
                 name='address'
@@ -127,9 +151,14 @@ class UpdateEmployeeInfo extends Component {
                 onChange={this.onChange}
               />
             </div>
+            </div>
 
             <div className='form-group'>
             <label htmlFor="published_date" style={{fontWeight:"bolder"}}>Date of Birth:</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-calendar" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
               <input
                 type='date'
                 name='birthdate'
@@ -138,8 +167,13 @@ class UpdateEmployeeInfo extends Component {
                 onChange={this.onChange}
               />
             </div>
+            </div>
             <div className='form-group'>
             <label htmlFor="publisher" style={{fontWeight:"bolder"}}>Phone Number:</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-phone" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
               <input
                 type='number'
                 name='phone_number'
@@ -148,8 +182,9 @@ class UpdateEmployeeInfo extends Component {
                 onChange={this.onChange}
               />
             </div>
+            </div>
 
-            <button type="submit" className="btn btn-outline-info btn-lg btn-block">Update Employee</button>
+            <button type="submit" className="btn btn-outline-danger btn-lg btn-block">Update Employee</button>
             <br></br>
             </form>
           </div>
