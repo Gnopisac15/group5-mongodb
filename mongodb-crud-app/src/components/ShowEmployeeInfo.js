@@ -104,7 +104,7 @@ class ShowEmployeeInfo extends Component {
       
             <div class="row">
               <div class="col ml-5">
-                <img src="https://play-lh.googleusercontent.com/oAzSon7ccvrVa8OH0A7xwMBJ6J2SfG_wy13DUUrRKQEMxTbQhXMsmwiiVeq7y3dzsos" style={{ height: "10px;" }} />
+                <img src={employee.img_url} style={{ height: "10px;", width:"90%" }} />
               </div>
               <div class="col-6 mr-5">
                 {EmpData}

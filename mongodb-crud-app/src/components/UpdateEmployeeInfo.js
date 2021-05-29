@@ -8,6 +8,7 @@ class UpdateEmployeeInfo extends Component {
     super(props);
     this.state = {
       full_name: '',
+      img_url:'',
       age: '',
       gender: '',
       address: '',
@@ -24,6 +25,7 @@ class UpdateEmployeeInfo extends Component {
         // this.setState({...this.state, book: res.data})
         this.setState({
           full_name: res.data.full_name,
+          img_url:res.data.img_url,
           age: res.data.age,
           gender: res.data.gender,
           address: res.data.address,
@@ -45,6 +47,7 @@ class UpdateEmployeeInfo extends Component {
    
     const data = {
       full_name: this.state.full_name,
+      img_url:this.state.img_url,
       age: this.state.age,
       gender: this.state.gender,
       address: this.state.address,
@@ -96,6 +99,23 @@ class UpdateEmployeeInfo extends Component {
                 name='full_name'
                 className='form-control'
                 value={this.state.full_name}
+                onChange={this.onChange}
+                
+              />
+            </div>
+            </div>
+
+            <div className='form-group'>
+              <label htmlFor="title" style={{fontWeight:"bolder"}}>Profile Image:</label>
+              <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-user" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                </div>
+              <input
+                type='text'
+                name='img_url'
+                className='form-control'
+                value={this.state.img_url}
                 onChange={this.onChange}
                 
               />

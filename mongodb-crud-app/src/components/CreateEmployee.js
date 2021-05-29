@@ -9,6 +9,7 @@ class CreateEmployee extends Component {
     super();
     this.state = {
       full_name: '',
+      img_url: '',
       age: '',
       gender: '',
       address: '',
@@ -25,6 +26,7 @@ class CreateEmployee extends Component {
     e.preventDefault();
     const data = {
       full_name: this.state.full_name,
+      img_url:this.state.img_url,
       age: this.state.age,
       gender: this.state.gender,
       address: this.state.address,
@@ -37,6 +39,7 @@ class CreateEmployee extends Component {
       .then(res => {
         this.setState({
           full_name: '',
+          img_url:'',
           age: '',
           gender: '',
           address: '',
@@ -69,7 +72,7 @@ class CreateEmployee extends Component {
                 <div className='form-group'>
                 <div class="input-group">
                 <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-user" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                <div class="input-group-text"><i class="fa fa-user" style={{fontSize: "27px",color:"#d90b4f"}}></i></div>
                 </div>
                   <input
                     type='text'
@@ -80,6 +83,25 @@ class CreateEmployee extends Component {
                     onChange={this.onChange}
                   />
                 </div>
+                </div>
+
+                <div className='form-group'>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <div class="input-group-text"><i style={{fontSize: "20px",color:"#d90b4f"}}><img src="https://cdn1.iconfinder.com/data/icons/essentials-blue-red/60/005_-_Image-256.png" style={{width:"20px"}}/></i></div>
+                </div>
+                  <input
+                    min='18'
+                    max='60'
+                    type='text'
+                    placeholder='Image Url'
+                    name='img_url'
+                    className='form-control'
+                    value={this.state.img_url}
+                    onChange={this.onChange}
+                    
+                  />
+                  </div>
                 </div>
 
                 <div className='form-group'>
@@ -104,7 +126,7 @@ class CreateEmployee extends Component {
                 <div className='form-group'>
                 <div class="input-group">
                 <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-intersex" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                <div class="input-group-text"><i class="fa fa-intersex" style={{fontSize: "24px",color:"#d90b4f"}}></i></div>
                 </div>
                   <input
                     type='text'
@@ -121,7 +143,7 @@ class CreateEmployee extends Component {
                 <div className='form-group'>
                 <div class="input-group">
                 <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-map-marker" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                <div class="input-group-text"><i class="fa fa-map-marker" style={{fontSize: "34px",color:"#d90b4f"}}></i></div>
                 </div>
                   <input
                     type='text'
@@ -154,7 +176,7 @@ class CreateEmployee extends Component {
                 <div className='form-group'>
                 <div class="input-group">
                 <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-phone" style={{fontSize: "20px",color:"#d90b4f"}}></i></div>
+                <div class="input-group-text"><i class="fa fa-phone" style={{fontSize: "25px",color:"#d90b4f"}}></i></div>
                 </div>
                   <input
                     type='text'

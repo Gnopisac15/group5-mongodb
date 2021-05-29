@@ -16,13 +16,20 @@ const EmployeeSchema = new mongoose.Schema({
         required: true
     },
     address: {
-        type: String
+        type: String,
+        required: true
     },
     birthdate: {
-        type: Date
+        type: Date,
+        required: true
     },
     phone_number: {
-        type: String
+        type: String,
+        required: true
+    },
+    img_url:{
+        type: String,
+        required: true
     },
     updated_date: {
         type: Date,

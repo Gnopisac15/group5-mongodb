@@ -9,6 +9,7 @@ const EmployeeData = (props) => {
        
         <tr>
             <td>{employee.full_name}</td>
+            <td>{employee.img_url}</td>
             <td>{employee.age}</td>
             <td>{employee.gender}</td>
             <td>{employee.address}</td>
